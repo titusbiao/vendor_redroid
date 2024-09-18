@@ -82,7 +82,7 @@ gpu_setup_guest() {
     egl=
 
     if [ -f $VENDOR_EGL_DIR/$EGL_ANGLE ] || [ -f $SYSTEM_EGL_DIR/$EGL_ANGLE ]; then
-        egl=angle
+        egl=swiftshader
     elif [ -f $VENDOR_EGL_DIR/$EGL_SS ] || [ -f $SYSTEM_EGL_DIR/$EGL_SS ]; then
         egl=swiftshader
     else
