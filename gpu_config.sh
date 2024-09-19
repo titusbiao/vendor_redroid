@@ -77,7 +77,7 @@ gpu_setup_guest() {
 
     VENDOR_EGL_DIR=/vendor/lib64/egl
     SYSTEM_EGL_DIR=/system/lib64
-    EGL_ANGLE=libEGL_angle.so
+    # EGL_ANGLE=libEGL_angle.so
     EGL_SS=libEGL_swiftshader.so
     egl=
 
