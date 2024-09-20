@@ -77,17 +77,17 @@ gpu_setup_guest() {
 
     VENDOR_EGL_DIR=/vendor/lib64/egl
     SYSTEM_EGL_DIR=/system/lib64
-    # EGL_ANGLE=libEGL_angle.so
+    EGL_ANGLE=libEGL_angle.so
     EGL_SS=libEGL_swiftshader.so
-    egl=
+    egl=swiftshader
 
-    if [ -f $VENDOR_EGL_DIR/$EGL_ANGLE ] || [ -f $SYSTEM_EGL_DIR/$EGL_ANGLE ]; then
-        egl=swiftshader
-    elif [ -f $VENDOR_EGL_DIR/$EGL_SS ] || [ -f $SYSTEM_EGL_DIR/$EGL_SS ]; then
-        egl=swiftshader
-    else
-        echo "ERROR no SW egl found!!!"
-    fi
+    # if [ -f $VENDOR_EGL_DIR/$EGL_ANGLE ] || [ -f $SYSTEM_EGL_DIR/$EGL_ANGLE ]; then
+    #     egl=angle
+    # elif [ -f $VENDOR_EGL_DIR/$EGL_SS ] || [ -f $SYSTEM_EGL_DIR/$EGL_SS ]; then
+    #     egl=swiftshader
+    # else
+    #     echo "ERROR no SW egl found!!!"
+    # fi
 
     setprop ro.hardware.egl $egl
     setprop ro.hardware.gralloc redroid
